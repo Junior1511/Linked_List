@@ -33,7 +33,58 @@ class Linked_list
   end
 
   def to_string
-    
+    storage = []
+    current = @head
+
+    while current != nil
+      storage << current.value
+      current = current.next_node
+    end
+    storage << "nil"
+    return storage.join(" -> ")
+  end
+
+  def pop_head
+    value_of_head = @head.each_value
+    if @head != nil
+      @head = @head.next_node
+    end
+    return value_of_head
+  end
+
+  def size
+    current = @head
+    size = 0
+    while current != nil
+      size += 1
+      current = current.next_node
+    end
+    return size
+  end
+
+  def head
+    return nil if @head.nil?
+    @head.value
+  end
+
+  def tail
+    return nil if @head.nil?
+    current = @head
+    while current.next_node != nil
+      current = current.next_node
+    end
+    return current.value
+  end
+
+  def at(index)
+    return nil if @head.nil?
+    num_of_iterations = index
+    current = @head
+    num_of_iterations.times {
+      return nil if current.next_node.nil?
+      current = current.next_node
+    }
+    return current.value
   end
 
 end
