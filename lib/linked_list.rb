@@ -87,4 +87,24 @@ class Linked_list
     return current.value
   end
 
+  def index(value)
+    return nil if @head.nil?
+    index = 0
+    current = @head
+    while current != nil
+      return index if current.value == value
+      current = current.next_node
+      index += 1
+    end
+  end
+
+  def contains?(value)
+    current = @head
+    while current != nil
+      return true if current.value == value
+      current = current.next_node
+    end
+    return false
+  end
+
 end
