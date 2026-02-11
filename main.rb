@@ -15,3 +15,4 @@ puts ll.contains?(700)
 puts ll.index(300)
 puts ll.index(400)
 p ll.index(800)
+p ll.to_string

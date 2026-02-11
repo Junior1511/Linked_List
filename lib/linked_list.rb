@@ -33,15 +33,15 @@ class Linked_list
   end
 
   def to_string
-    storage = []
+    storage = ""
     current = @head
 
     while current != nil
-      storage << current.value
+      storage += "( #{current.value} ) -> "
       current = current.next_node
     end
-    storage << "nil"
-    return storage.join(" -> ")
+    storage += "nil"
+    return storage
   end
 
   def pop_head
